@@ -134,21 +134,24 @@
       </h2>
       <div class="text-[1.0625rem] leading-relaxed text-ink/80 space-y-5">
         <p>
-          A robot acting in the physical world cannot treat every timestep as a fresh start — it may need to
-          remember that a mug was placed in a cupboard, that a drawer was already checked, or that a grasp
-          failed because an object slipped. Yet despite rapid progress in vision–language–action (VLA)
-          models, most systems still struggle to store past experience and retrieve it when it matters.
+          A robot in the physical world cannot treat every timestep as a fresh start — it may need to recall
+          that a mug went into a cupboard, that a drawer was already checked, or that a grasp failed because
+          the object slipped. By <em>memory</em> we mean the ability to store past experience and call it
+          back when it is relevant, not just to keep recent observations in view — which matters most in
+          partially observable, long-horizon tasks. Yet most robot foundation models — generalist policies,
+          vision–language–action (VLA) models, and video world models — treat memory only shallowly: a
+          window of recent context, a replay buffer, or retrieval over past observations.
         </p>
         <p>
-          This workshop focuses on what robots should remember — and how memory should be represented,
-          retrieved, integrated with policies, and evaluated.
+          This workshop works toward a shared vocabulary for robot memory, the failure modes it must
+          address, and evaluation criteria that isolate what memory actually contributes.
         </p>
       </div>
 
       <figure class="mt-9 border-l-2 border-ember pl-6">
         <blockquote class="font-serif text-xl sm:text-2xl leading-snug tracking-tight text-ink">
-          What should memory mean for autonomous robots — and how should it be implemented, learned,
-          evaluated, and deployed?
+          What should memory mean for autonomous robots — and how should we learn, build, evaluate, and
+          deploy it?
         </blockquote>
       </figure>
     </div>
@@ -183,7 +186,7 @@
           </div>
           <a href="https://www.jie-tan.net/" target="_blank" rel="noopener"
              class="font-semibold text-cream link-underline">Jie Tan</a>
-          <p class="text-sm text-cream/55 mt-1">Google DeepMind</p>
+          <p class="text-sm text-cream/55 mt-1">Google DeepMind &amp; Stanford</p>
         </div>
 
         <div class="text-center">
@@ -199,17 +202,15 @@
 
         <div class="text-center">
           <div class="relative w-28 h-28 mx-auto mb-4">
-            <img src="assets/speakers/yilun_du.png"
-                 alt="Yilun Du" class="w-28 h-28 rounded-full object-cover ring-1 ring-white/15" />
+            <img src="assets/speakers/karl_pertsch.jpg"
+                 alt="Karl Pertsch" class="w-28 h-28 rounded-full object-cover ring-1 ring-white/15" />
             <span class="absolute -bottom-1 left-1/2 -translate-x-1/2 text-[10px] font-semibold tracking-wide uppercase bg-ember-light text-ink px-2 py-0.5 rounded-full">In&nbsp;Person</span>
           </div>
-          <a href="https://yilundu.github.io/" target="_blank" rel="noopener"
-             class="font-semibold text-cream link-underline">Yilun Du</a>
-          <p class="text-sm text-cream/55 mt-1">Harvard University</p>
+          <a href="https://kpertsch.github.io/" target="_blank" rel="noopener"
+             class="font-semibold text-cream link-underline">Karl Pertsch</a>
+          <p class="text-sm text-cream/55 mt-1">Physical Intelligence</p>
         </div>
       </div>
-
-      <p class="text-center text-xs text-cream/40 mt-12">More speakers to be announced.</p>
     </div>
   </section>
 
@@ -222,61 +223,60 @@
       </div>
 
       <ol class="relative border-l border-ink/15 ml-3 space-y-2 reveal">
-        <!-- item -->
-        <li class="relative pl-8 py-3 group">
+        <li class="relative pl-8 py-3">
           <span class="absolute -left-[6.5px] top-5 w-3 h-3 rounded-full bg-ember ring-4 ring-cream"></span>
           <div class="flex flex-col sm:flex-row sm:items-baseline sm:gap-5">
-            <span class="font-mono text-sm text-ink/50 sm:w-40 shrink-0">08:30 – 09:00</span>
-            <span class="font-medium">Welcome &amp; Interactive Break-out Session</span>
+            <span class="font-mono text-sm text-ink/50 sm:w-40 shrink-0">08:30 – 08:45</span>
+            <span class="font-medium">Welcome</span>
           </div>
         </li>
         <li class="relative pl-8 py-3">
           <span class="absolute -left-[6.5px] top-5 w-3 h-3 rounded-full bg-ink/30 ring-4 ring-cream"></span>
           <div class="flex flex-col sm:flex-row sm:items-baseline sm:gap-5">
-            <span class="font-mono text-sm text-ink/50 sm:w-40 shrink-0">09:00 – 09:30</span>
+            <span class="font-mono text-sm text-ink/50 sm:w-40 shrink-0">08:45 – 09:15</span>
             <span class="font-medium">Invited Speaker 1</span>
           </div>
         </li>
         <li class="relative pl-8 py-3">
           <span class="absolute -left-[6.5px] top-5 w-3 h-3 rounded-full bg-ink/30 ring-4 ring-cream"></span>
           <div class="flex flex-col sm:flex-row sm:items-baseline sm:gap-5">
-            <span class="font-mono text-sm text-ink/50 sm:w-40 shrink-0">09:30 – 10:00</span>
+            <span class="font-mono text-sm text-ink/50 sm:w-40 shrink-0">09:15 – 09:45</span>
             <span class="font-medium">Invited Speaker 2</span>
           </div>
         </li>
         <li class="relative pl-8 py-3">
           <span class="absolute -left-[6.5px] top-5 w-3 h-3 rounded-full bg-ember ring-4 ring-cream"></span>
           <div class="flex flex-col sm:flex-row sm:items-baseline sm:gap-5">
-            <span class="font-mono text-sm text-ink/50 sm:w-40 shrink-0">10:00 – 10:30</span>
-            <span class="font-medium">Poster Session &amp; Coffee Break</span>
+            <span class="font-mono text-sm text-ink/50 sm:w-40 shrink-0">09:45 – 10:30</span>
+            <span class="font-medium">Lightning Position Talks &amp; Audience Discussion</span>
+          </div>
+        </li>
+        <li class="relative pl-8 py-3">
+          <span class="absolute -left-[6.5px] top-5 w-3 h-3 rounded-full bg-ember ring-4 ring-cream"></span>
+          <div class="flex flex-col sm:flex-row sm:items-baseline sm:gap-5">
+            <span class="font-mono text-sm text-ink/50 sm:w-40 shrink-0">10:30 – 11:15</span>
+            <span class="font-medium">Posters &amp; Coffee Break</span>
           </div>
         </li>
         <li class="relative pl-8 py-3">
           <span class="absolute -left-[6.5px] top-5 w-3 h-3 rounded-full bg-ink/30 ring-4 ring-cream"></span>
           <div class="flex flex-col sm:flex-row sm:items-baseline sm:gap-5">
-            <span class="font-mono text-sm text-ink/50 sm:w-40 shrink-0">10:30 – 11:00</span>
+            <span class="font-mono text-sm text-ink/50 sm:w-40 shrink-0">11:15 – 11:45</span>
             <span class="font-medium">Invited Speaker 3</span>
           </div>
         </li>
         <li class="relative pl-8 py-3">
           <span class="absolute -left-[6.5px] top-5 w-3 h-3 rounded-full bg-ink/30 ring-4 ring-cream"></span>
           <div class="flex flex-col sm:flex-row sm:items-baseline sm:gap-5">
-            <span class="font-mono text-sm text-ink/50 sm:w-40 shrink-0">11:00 – 11:30</span>
+            <span class="font-mono text-sm text-ink/50 sm:w-40 shrink-0">11:45 – 12:15</span>
             <span class="font-medium">Invited Speaker 4</span>
           </div>
         </li>
         <li class="relative pl-8 py-3">
           <span class="absolute -left-[6.5px] top-5 w-3 h-3 rounded-full bg-ember ring-4 ring-cream"></span>
           <div class="flex flex-col sm:flex-row sm:items-baseline sm:gap-5">
-            <span class="font-mono text-sm text-ink/50 sm:w-40 shrink-0">11:30 – 12:15</span>
-            <span class="font-medium">Panel Debate · <span class="italic font-normal text-ink/70">What should memory mean for autonomous robots?</span></span>
-          </div>
-        </li>
-        <li class="relative pl-8 py-3">
-          <span class="absolute -left-[6.5px] top-5 w-3 h-3 rounded-full bg-ink/30 ring-4 ring-cream"></span>
-          <div class="flex flex-col sm:flex-row sm:items-baseline sm:gap-5">
             <span class="font-mono text-sm text-ink/50 sm:w-40 shrink-0">12:15 – 12:30</span>
-            <span class="font-medium">Conclusion</span>
+            <span class="font-medium">Final Discussion &amp; Conclusion</span>
           </div>
         </li>
       </ol>
@@ -296,67 +296,53 @@
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-ink/10 rounded-2xl overflow-hidden reveal">
         <div class="bg-cream p-7 hover:bg-ember-soft/60 transition-colors">
           <span class="font-mono text-ember text-sm">01</span>
-          <h3 class="font-serif font-semibold text-lg mt-3 mb-2 leading-snug">Defining memory for robots</h3>
+          <h3 class="font-serif font-semibold text-lg mt-3 mb-2 leading-snug">The role of memory in robot behavior</h3>
           <p class="text-sm text-ink/70 leading-relaxed">
-            Which distinctions — short-term context, recurrent state, episodic, semantic, spatial, skill
-            memory, experience replay — actually help build better agents, and which are merely inherited
-            from human cognition?
+            Beyond perception and policy execution, what should memory enable — tracking hidden state,
+            avoiding repeated mistakes, recovering from failures, adapting to environments and users, and
+            accumulating reusable knowledge?
           </p>
         </div>
         <div class="bg-cream p-7 hover:bg-ember-soft/60 transition-colors">
           <span class="font-mono text-ember text-sm">02</span>
-          <h3 class="font-serif font-semibold text-lg mt-3 mb-2 leading-snug">Identifying what to store</h3>
+          <h3 class="font-serif font-semibold text-lg mt-3 mb-2 leading-snug">What to store and retrieve</h3>
           <p class="text-sm text-ink/70 leading-relaxed">
-            Raw observations, language descriptions, object states, maps, action traces, failed attempts, or
-            compressed latents — and how should this differ across manipulation, navigation, and
-            human–robot interaction?
+            Observations, language summaries, object states, maps, action traces, failures, preferences, or
+            latent representations? And how can a robot retrieve the right memory under partial observability
+            without surfacing stale or irrelevant entries?
           </p>
         </div>
         <div class="bg-cream p-7 hover:bg-ember-soft/60 transition-colors">
           <span class="font-mono text-ember text-sm">03</span>
-          <h3 class="font-serif font-semibold text-lg mt-3 mb-2 leading-snug">Consolidation &amp; forgetting</h3>
+          <h3 class="font-serif font-semibold text-lg mt-3 mb-2 leading-snug">Consolidation, abstraction &amp; forgetting</h3>
           <p class="text-sm text-ink/70 leading-relaxed">
-            How should an agent compress repeated experience into reusable knowledge while preserving rare
-            but critical events — and what are principled mechanisms for forgetting stale or misleading
-            memories?
+            How should robots compress repeated experience into reusable knowledge, preserve rare but
+            important events, and revise or forget memories when environments, tasks, or users change?
           </p>
         </div>
         <div class="bg-cream p-7 hover:bg-ember-soft/60 transition-colors">
           <span class="font-mono text-ember text-sm">04</span>
-          <h3 class="font-serif font-semibold text-lg mt-3 mb-2 leading-snug">Retrieval under partial observability</h3>
+          <h3 class="font-serif font-semibold text-lg mt-3 mb-2 leading-snug">Integrating memory with policies &amp; planners</h3>
           <p class="text-sm text-ink/70 leading-relaxed">
-            How can a robot retrieve task-relevant memories when the current observation is insufficient —
-            indexing by objects, places, goals, instructions, or causal relevance — without surfacing
-            distracting or stale entries?
+            Should memory be external, latent, structured, or end-to-end learned — and how should it interact
+            with reactive control, long-horizon planning, prediction, and language-conditioned reasoning?
           </p>
         </div>
         <div class="bg-cream p-7 hover:bg-ember-soft/60 transition-colors">
           <span class="font-mono text-ember text-sm">05</span>
-          <h3 class="font-serif font-semibold text-lg mt-3 mb-2 leading-snug">Integration with policies &amp; VLAs</h3>
+          <h3 class="font-serif font-semibold text-lg mt-3 mb-2 leading-snug">Learning from remembered experience</h3>
           <p class="text-sm text-ink/70 leading-relaxed">
-            Should memory be an external module, an internal latent state, a structured world model, or part
-            of an end-to-end policy — and how can it serve both fast reactive control and longer-term
-            reasoning?
+            How can memories of failed grasps, unsuccessful searches, misunderstood instructions, or changing
+            environments lead to improved future behavior rather than passive recall?
           </p>
         </div>
         <div class="bg-cream p-7 hover:bg-ember-soft/60 transition-colors">
           <span class="font-mono text-ember text-sm">06</span>
-          <h3 class="font-serif font-semibold text-lg mt-3 mb-2 leading-snug">Learning from failures</h3>
+          <h3 class="font-serif font-semibold text-lg mt-3 mb-2 leading-snug">Evaluating memory-enabled learning</h3>
           <p class="text-sm text-ink/70 leading-relaxed">
-            What should a robot remember about a failed grasp, search, or misunderstood instruction — and
-            how can such memories be transformed into improved behavior rather than merely retrieved?
+            What benchmarks and metrics can distinguish genuine memory use from larger context windows,
+            environment memorization, or task-specific shortcuts?
           </p>
-        </div>
-        <div class="bg-cream p-7 hover:bg-ember-soft/60 transition-colors sm:col-span-2 lg:col-span-3 lg:flex lg:items-center lg:gap-6">
-          <div class="lg:flex-1">
-            <span class="font-mono text-ember text-sm">07</span>
-            <h3 class="font-serif font-semibold text-lg mt-3 mb-2 leading-snug">Benchmarks for genuine memory</h3>
-            <p class="text-sm text-ink/70 leading-relaxed lg:max-w-3xl">
-              What partially observable, long-horizon tasks isolate <em>genuine</em> memory use from larger
-              context windows or environment memorization — and what metrics capture retrieval quality,
-              recovery, and persistence?
-            </p>
-          </div>
         </div>
       </div>
     </div>
@@ -383,10 +369,6 @@
             <li class="flex gap-3">
               <span class="mt-2.5 w-1.5 h-1.5 rounded-full bg-ember shrink-0"></span>
               <span><strong class="font-semibold text-ink">Review criteria.</strong> Technical correctness, reproducibility, and actionable artifacts — protocols, datasets, metrics, or well-documented system case studies.</span>
-            </li>
-            <li class="flex gap-3">
-              <span class="mt-2.5 w-1.5 h-1.5 rounded-full bg-ember shrink-0"></span>
-              <span><strong class="font-semibold text-ink">Presentation.</strong> Posters with optional lightning pitches; we expect roughly <strong class="font-semibold text-ink">30 contributed posters / short papers</strong>.</span>
             </li>
             <li class="flex gap-3">
               <span class="mt-2.5 w-1.5 h-1.5 rounded-full bg-ember shrink-0"></span>
@@ -436,42 +418,54 @@
         <h2 class="font-serif font-semibold text-3xl sm:text-4xl tracking-tight">Organizers</h2>
       </div>
 
-      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 reveal">
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-8 reveal">
         <div class="text-center">
-          <img src="https://ui-avatars.com/api/?name=Pembe+Gizem+Ozdil&size=200&background=efe9db&color=c6700f&font-size=0.38&bold=true"
+          <img src="assets/organizers/pembe_ozdil.png"
                alt="Pembe Gizem Özdil" class="w-24 h-24 rounded-full mx-auto mb-3 object-cover ring-1 ring-ink/10" />
           <a href="https://gizemozd.github.io/" target="_blank" rel="noopener" class="font-semibold text-sm link-underline">Pembe Gizem Özdil</a>
           <p class="text-xs text-ink/55 mt-1">Kempner Institute, Harvard</p>
         </div>
         <div class="text-center">
-          <img src="https://ui-avatars.com/api/?name=Weirui+Ye&size=200&background=efe9db&color=c6700f&font-size=0.38&bold=true"
+          <img src="assets/organizers/weirui_ye.jpg"
                alt="Weirui Ye" class="w-24 h-24 rounded-full mx-auto mb-3 object-cover ring-1 ring-ink/10" />
           <a href="https://yewr.github.io/" target="_blank" rel="noopener" class="font-semibold text-sm link-underline">Weirui Ye</a>
           <p class="text-xs text-ink/55 mt-1">MIT</p>
         </div>
         <div class="text-center">
-          <img src="https://ui-avatars.com/api/?name=Tarik+Kelestemur&size=200&background=efe9db&color=c6700f&font-size=0.38&bold=true"
+          <img src="assets/organizers/tarik_kelestemur.jpg"
                alt="Tarık Keleştemur" class="w-24 h-24 rounded-full mx-auto mb-3 object-cover ring-1 ring-ink/10" />
           <a href="https://kelestemur.com/" target="_blank" rel="noopener" class="font-semibold text-sm link-underline">Tarık Keleştemur</a>
           <p class="text-xs text-ink/55 mt-1">Eka Robotics</p>
         </div>
         <div class="text-center">
-          <img src="https://ui-avatars.com/api/?name=Huangyuan+Su&size=200&background=efe9db&color=c6700f&font-size=0.38&bold=true"
+          <img src="assets/organizers/huangyuan_su.jpg"
                alt="Huangyuan Su" class="w-24 h-24 rounded-full mx-auto mb-3 object-cover ring-1 ring-ink/10" />
           <a href="https://hither1.github.io/" target="_blank" rel="noopener" class="font-semibold text-sm link-underline">Huangyuan Su</a>
           <p class="text-xs text-ink/55 mt-1">Kempner Institute, Harvard</p>
         </div>
         <div class="text-center">
-          <img src="https://ui-avatars.com/api/?name=Francesco+Paissan&size=200&background=efe9db&color=c6700f&font-size=0.38&bold=true"
+          <img src="assets/organizers/francesco_paissan.jpg"
                alt="Francesco Paissan" class="w-24 h-24 rounded-full mx-auto mb-3 object-cover ring-1 ring-ink/10" />
           <a href="https://francescopaissan.it/" target="_blank" rel="noopener" class="font-semibold text-sm link-underline">Francesco Paissan</a>
-          <p class="text-xs text-ink/55 mt-1">Université Laval &amp; Mila</p>
+          <p class="text-xs text-ink/55 mt-1">Mila, Université Laval</p>
         </div>
         <div class="text-center">
-          <img src="https://ui-avatars.com/api/?name=Jan-Nico+Zaech&size=200&background=efe9db&color=c6700f&font-size=0.38&bold=true"
+          <img src="assets/organizers/zhiyi_li.jpeg"
+               alt="Zhiyi Li" class="w-24 h-24 rounded-full mx-auto mb-3 object-cover ring-1 ring-ink/10" />
+          <a href="https://www.linkedin.com/in/zhiyili24/" target="_blank" rel="noopener" class="font-semibold text-sm link-underline">Zhiyi Li</a>
+          <p class="text-xs text-ink/55 mt-1">MIT</p>
+        </div>
+        <div class="text-center">
+          <img src="assets/organizers/jan_nico_zaech.jpg"
                alt="Jan-Nico Zaech" class="w-24 h-24 rounded-full mx-auto mb-3 object-cover ring-1 ring-ink/10" />
           <a href="https://jannicozaech.github.io/" target="_blank" rel="noopener" class="font-semibold text-sm link-underline">Jan-Nico Zaech</a>
           <p class="text-xs text-ink/55 mt-1">Woven by Toyota</p>
+        </div>
+        <div class="text-center">
+          <img src="assets/organizers/yilun_du.png"
+               alt="Yilun Du" class="w-24 h-24 rounded-full mx-auto mb-3 object-cover ring-1 ring-ink/10" />
+          <a href="https://yilundu.github.io/" target="_blank" rel="noopener" class="font-semibold text-sm link-underline">Yilun Du</a>
+          <p class="text-xs text-ink/55 mt-1">Kempner Institute, Harvard</p>
         </div>
       </div>
     </div>

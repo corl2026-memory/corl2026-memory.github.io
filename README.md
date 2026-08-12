@@ -1,7 +1,7 @@
 # Memory for Robot Foundation Models — CoRL 2026 Workshop
 
 Website for the **Memory for Robot Foundation Models** half-day workshop at the
-Conference on Robot Learning (CoRL) 2026 — Austin, TX, USA · November 9, 2026.
+Conference on Robot Learning (CoRL) 2026 — Austin, TX, USA · November 12, 2026.
 
 ## Deploy
 

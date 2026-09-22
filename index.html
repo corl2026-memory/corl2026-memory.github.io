@@ -160,7 +160,7 @@
           <span class="text-ember-light">✦</span> Conference on Robot Learning
         </span>
         <a href="#cfp" class="flex items-center gap-2 text-ember-light font-semibold hover:text-cream transition-colors">
-          <span class="pulse-dot w-2 h-2 rounded-full bg-ember-light"></span> Submissions due Sep 24 (AoE)
+          <span class="pulse-dot w-2 h-2 rounded-full bg-ember-light"></span> Submissions due Sep 30 (AoE)
         </a>
       </div>
     </div>
@@ -419,7 +419,7 @@
           <div class="grid sm:grid-cols-3 gap-4">
             <div class="rounded-2xl bg-ember-light/15 ring-1 ring-ember-light/45 p-5">
               <p class="text-[10px] font-bold uppercase tracking-[0.16em] text-ember-light mb-2">Submission deadline</p>
-              <p class="font-mono text-2xl sm:text-[1.75rem] font-medium text-cream leading-none">Sep 24</p>
+              <p class="font-mono text-2xl sm:text-[1.75rem] font-medium text-cream leading-none">Sep 30</p>
               <p class="text-xs text-cream/60 mt-1.5">2026 · Anywhere on Earth</p>
             </div>
             <div class="rounded-2xl bg-white/[0.04] ring-1 ring-white/10 p-5">
@@ -600,7 +600,7 @@
              class="cta inline-flex rounded-full px-9 py-4 font-bold text-base tracking-wide">
             <span class="flex items-center gap-2.5">Submit on OpenReview <span aria-hidden="true">→</span></span>
           </a>
-          <p class="text-xs text-ink/50 mt-4">Submissions close September 24, 2026 · 23:59 Anywhere on Earth.</p>
+          <p class="text-xs text-ink/50 mt-4">Submissions close September 30, 2026 · 23:59 Anywhere on Earth (Oct 1, 8:00 AM EDT).</p>
         </div>
       </div>
 
@@ -720,8 +720,8 @@
     document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
     // Countdown to the submission deadline.
-    // Sept 24, 2026, 23:59:59 Anywhere on Earth (AoE = UTC-12) → Sept 25, 11:59:59 UTC.
-    const DEADLINE = Date.UTC(2026, 8, 25, 11, 59, 59);
+    // Sept 30, 2026, 23:59:59 Anywhere on Earth (AoE = UTC-12) → Oct 1, 11:59:59 UTC.
+    const DEADLINE = Date.UTC(2026, 9, 1, 11, 59, 59);
     const cd = {
       wrap: document.getElementById('countdown'),
       label: document.getElementById('countdown-label'),

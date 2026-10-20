@@ -107,11 +107,11 @@
         <a href="#speakers" class="hover:text-white transition-colors">Speakers</a>
         <a href="#schedule" class="hover:text-white transition-colors">Schedule</a>
         <a href="#challenges" class="hover:text-white transition-colors">Open Problems</a>
-        <a href="#cfp" class="hover:text-white transition-colors">Call for Papers</a>
+        <a href="cfp.html" class="hover:text-white transition-colors">Call for Papers</a>
         <a href="#organizers" class="hover:text-white transition-colors">Organizers</a>
       </div>
-      <a href="#cfp" id="navcta" class="cta text-[13px] font-bold uppercase tracking-wider px-5 py-2.5 rounded-full">
-        <span class="flex items-center gap-1.5">Submit <span aria-hidden="true">→</span></span>
+      <a href="#schedule" id="navcta" class="cta text-[13px] font-bold uppercase tracking-wider px-5 py-2.5 rounded-full">
+        <span class="flex items-center gap-1.5">Program <span aria-hidden="true">→</span></span>
       </a>
     </div>
   </nav>
@@ -140,11 +140,11 @@
       </p>
 
       <div class="flex flex-wrap items-center gap-3 mb-14">
-        <a href="#cfp" class="cta px-7 py-3.5 rounded-full font-bold text-[0.9375rem] tracking-wide">
-          <span class="flex items-center gap-2">Call for Papers <span aria-hidden="true">→</span></span>
+        <a href="#schedule" class="cta px-7 py-3.5 rounded-full font-bold text-[0.9375rem] tracking-wide">
+          <span class="flex items-center gap-2">View Program <span aria-hidden="true">→</span></span>
         </a>
-        <a href="#schedule" class="px-6 py-3 rounded-full border border-white/30 text-cream font-semibold text-sm hover:bg-white/10 transition-colors">
-          View Program
+        <a href="cfp.html" class="px-6 py-3 rounded-full border border-white/30 text-cream font-semibold text-sm hover:bg-white/10 transition-colors">
+          Call for Papers
         </a>
       </div>
 
@@ -159,8 +159,8 @@
         <span class="flex items-center gap-2">
           <span class="text-ember-light">✦</span> Conference on Robot Learning
         </span>
-        <a href="#cfp" class="flex items-center gap-2 text-ember-light font-semibold hover:text-cream transition-colors">
-          <span class="pulse-dot w-2 h-2 rounded-full bg-ember-light"></span> Submissions due Sep 30 (AoE)
+        <a href="#dates" class="flex items-center gap-2 text-ember-light font-semibold hover:text-cream transition-colors">
+          <span class="pulse-dot w-2 h-2 rounded-full bg-ember-light"></span> Notifications by Oct 24
         </a>
       </div>
     </div>
@@ -250,6 +250,27 @@
           <a href="https://kpertsch.github.io/" target="_blank" rel="noopener"
              class="font-semibold text-cream link-underline">Karl Pertsch</a>
           <p class="text-sm text-cream/55 mt-1">Physical Intelligence</p>
+        </div>
+      </div>
+
+      <div class="mt-16 pt-12 border-t border-white/10 reveal">
+        <p class="text-center text-ember-light font-semibold tracking-[0.2em] text-xs uppercase mb-10">Additional Panelists</p>
+        <div class="grid grid-cols-2 gap-8 max-w-md mx-auto">
+          <div class="text-center">
+            <img src="assets/speakers/coline_devin.jpg"
+                 alt="Coline Devin" class="w-28 h-28 mx-auto mb-4 rounded-full object-cover ring-1 ring-white/15" />
+            <a href="https://cdevin.github.io/" target="_blank" rel="noopener"
+               class="font-semibold text-cream link-underline">Coline Devin</a>
+            <p class="text-sm text-cream/55 mt-1">Generalist</p>
+          </div>
+
+          <div class="text-center">
+            <img src="assets/organizers/yilun_du.png"
+                 alt="Yilun Du" class="w-28 h-28 mx-auto mb-4 rounded-full object-cover ring-1 ring-white/15" />
+            <a href="https://yilundu.github.io/" target="_blank" rel="noopener"
+               class="font-semibold text-cream link-underline">Yilun Du</a>
+            <p class="text-sm text-cream/55 mt-1">Kempner Institute, Harvard</p>
+          </div>
         </div>
       </div>
     </div>
@@ -396,227 +417,38 @@
     </div>
   </section>
 
-  <!-- ===================== CALL FOR PAPERS ===================== -->
-  <section id="cfp" class="bg-cream py-20 px-5 sm:px-6 scroll-mt-16">
+  <!-- ===================== KEY DATES ===================== -->
+  <section id="dates" class="bg-cream py-20 px-5 sm:px-6 scroll-mt-16">
     <div class="max-w-5xl mx-auto">
-
-      <div class="max-w-2xl mb-10 reveal">
-        <p class="text-ember font-semibold tracking-[0.2em] text-xs uppercase mb-4">Call for Papers</p>
-        <h2 class="font-serif font-semibold text-3xl sm:text-4xl tracking-tight leading-tight mb-5">
-          Contribute to the workshop
-        </h2>
-        <p class="text-[1.0625rem] leading-relaxed text-ink/75">
-          We invite short papers on any aspect of memory for robot foundation models. Position papers,
-          works-in-progress, benchmark and dataset contributions, and negative or ablation results are
-          explicitly welcome.
-        </p>
-      </div>
-
-      <!-- ---------- KEY DATES (high-visibility banner) ---------- -->
-      <div class="reveal date-banner relative overflow-hidden rounded-3xl text-cream p-7 sm:p-9 mb-16 ring-1 ring-ember/30">
+      <div class="reveal date-banner relative overflow-hidden rounded-3xl text-cream p-7 sm:p-9 ring-1 ring-ember/30">
         <div class="absolute inset-0 lattice opacity-50 pointer-events-none"></div>
         <div class="relative">
           <div class="flex flex-wrap items-center justify-between gap-3 mb-7">
             <p class="text-ember-light font-bold tracking-[0.24em] text-[11px] uppercase">Key Dates</p>
-            <span class="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-wider text-cream/70">
-              <span class="pulse-dot w-2 h-2 rounded-full bg-ember-light"></span> Submissions now open
-            </span>
+            <a href="cfp.html" class="text-[11px] font-semibold uppercase tracking-wider text-cream/70 hover:text-cream transition-colors">
+              Call for Papers <span aria-hidden="true">→</span>
+            </a>
           </div>
 
           <div class="grid sm:grid-cols-3 gap-4">
-            <div class="rounded-2xl bg-ember-light/15 ring-1 ring-ember-light/45 p-5">
-              <p class="text-[10px] font-bold uppercase tracking-[0.16em] text-ember-light mb-2">Submission deadline</p>
-              <p class="font-mono text-2xl sm:text-[1.75rem] font-medium text-cream leading-none">Sep 30</p>
-              <p class="text-xs text-cream/60 mt-1.5">2026 · Anywhere on Earth</p>
+            <div class="rounded-2xl bg-white/[0.04] ring-1 ring-white/10 p-5">
+              <p class="text-[10px] font-bold uppercase tracking-[0.16em] text-cream/50 mb-2">Submission deadline</p>
+              <p class="font-mono text-2xl sm:text-[1.75rem] font-medium text-cream/85 leading-none">Sep 30</p>
+              <p class="text-xs text-cream/50 mt-1.5">2026 · Closed</p>
             </div>
             <div class="rounded-2xl bg-white/[0.04] ring-1 ring-white/10 p-5">
               <p class="text-[10px] font-bold uppercase tracking-[0.16em] text-cream/50 mb-2">Notification</p>
               <p class="font-mono text-2xl sm:text-[1.75rem] font-medium text-cream/85 leading-none">Oct 24</p>
               <p class="text-xs text-cream/50 mt-1.5">2026</p>
             </div>
-            <div class="rounded-2xl bg-white/[0.04] ring-1 ring-white/10 p-5">
-              <p class="text-[10px] font-bold uppercase tracking-[0.16em] text-cream/50 mb-2">Workshop day</p>
+            <div class="rounded-2xl bg-ember-light/15 ring-1 ring-ember-light/45 p-5">
+              <p class="text-[10px] font-bold uppercase tracking-[0.16em] text-ember-light mb-2">Workshop day</p>
               <p class="font-mono text-2xl sm:text-[1.75rem] font-medium text-cream leading-none">Nov 12</p>
-              <p class="text-xs text-cream/50 mt-1.5">Austin, TX, USA</p>
-            </div>
-          </div>
-
-          <!-- live countdown to the submission deadline -->
-          <div class="mt-7 pt-6 border-t border-white/10 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6">
-            <a href="https://openreview.net/group?id=robot-learning.org/CoRL/2026/Workshop/RoboMem"
-               target="_blank" rel="noopener"
-               class="cta inline-flex self-start rounded-full px-5 py-2.5 font-bold text-sm tracking-wide">
-              <span class="flex items-center gap-2">Submit on OpenReview <span aria-hidden="true">→</span></span>
-            </a>
-
-            <div class="sm:text-right">
-              <p id="countdown-label" class="text-[10px] font-bold uppercase tracking-[0.16em] text-cream/50 mb-3">
-                Time left to submit
-              </p>
-
-              <div id="countdown" class="flex items-stretch gap-2 sm:gap-3">
-                <div class="text-center rounded-xl bg-white/[0.06] ring-1 ring-white/10 px-3 sm:px-4 py-2.5 min-w-[3.5rem]">
-                  <span id="cd-d" class="block font-mono text-xl sm:text-2xl font-medium text-cream tabular-nums leading-none">–</span>
-                  <span class="block text-[9px] font-bold uppercase tracking-[0.14em] text-cream/45 mt-1.5">days</span>
-                </div>
-                <div class="text-center rounded-xl bg-white/[0.06] ring-1 ring-white/10 px-3 sm:px-4 py-2.5 min-w-[3.5rem]">
-                  <span id="cd-h" class="block font-mono text-xl sm:text-2xl font-medium text-cream tabular-nums leading-none">–</span>
-                  <span class="block text-[9px] font-bold uppercase tracking-[0.14em] text-cream/45 mt-1.5">hrs</span>
-                </div>
-                <div class="text-center rounded-xl bg-white/[0.06] ring-1 ring-white/10 px-3 sm:px-4 py-2.5 min-w-[3.5rem]">
-                  <span id="cd-m" class="block font-mono text-xl sm:text-2xl font-medium text-cream tabular-nums leading-none">–</span>
-                  <span class="block text-[9px] font-bold uppercase tracking-[0.14em] text-cream/45 mt-1.5">min</span>
-                </div>
-                <div class="text-center rounded-xl bg-ember-light/15 ring-1 ring-ember-light/40 px-3 sm:px-4 py-2.5 min-w-[3.5rem]">
-                  <span id="cd-s" class="block font-mono text-xl sm:text-2xl font-medium text-ember-light tabular-nums leading-none">–</span>
-                  <span class="block text-[9px] font-bold uppercase tracking-[0.14em] text-ember-light/60 mt-1.5">sec</span>
-                </div>
-              </div>
-
-              <p id="countdown-closed" class="hidden text-sm font-semibold text-ember-light">
-                The submission deadline has passed — thank you to everyone who submitted.
-              </p>
+              <p class="text-xs text-cream/60 mt-1.5">Austin, TX, USA</p>
             </div>
           </div>
         </div>
       </div>
-
-      <!-- ---------- TOPICS OF INTEREST ---------- -->
-      <div class="reveal mb-16">
-        <h3 class="font-serif font-semibold text-2xl sm:text-3xl tracking-tight mb-9">Topics of Interest</h3>
-
-        <div class="grid sm:grid-cols-2 gap-x-12 gap-y-8">
-          <div class="border-t-2 border-ember/70 pt-4">
-            <div class="flex items-baseline gap-3 mb-2">
-              <span class="font-mono text-xs text-ember font-medium">01</span>
-              <h4 class="font-semibold text-[1.0625rem] leading-snug">Memory architectures &amp; implementation</h4>
-            </div>
-            <p class="text-sm text-ink/70 leading-relaxed">
-              Recurrent and state-space memory · compressed or gated KV caches · external memory banks ·
-              retrieval-augmented policies · on-robot latency and compute budgets
-            </p>
-          </div>
-
-          <div class="border-t-2 border-ember/70 pt-4">
-            <div class="flex items-baseline gap-3 mb-2">
-              <span class="font-mono text-xs text-ember font-medium">02</span>
-              <h4 class="font-semibold text-[1.0625rem] leading-snug">Spatial &amp; scene memory</h4>
-            </div>
-            <p class="text-sm text-ink/70 leading-relaxed">
-              Persistent 3D and 4D scene representations · semantic maps · object-centric and surfel memory ·
-              Gaussian splats · object permanence under occlusion · re-localization and revisit consistency
-            </p>
-          </div>
-
-          <div class="border-t-2 border-ember/70 pt-4">
-            <div class="flex items-baseline gap-3 mb-2">
-              <span class="font-mono text-xs text-ember font-medium">03</span>
-              <h4 class="font-semibold text-[1.0625rem] leading-snug">Episodic memory, retrieval &amp; lifelong improvement</h4>
-            </div>
-            <p class="text-sm text-ink/70 leading-relaxed">
-              Recall of trajectories, failures and corrections · retrieval-based adaptation · consolidation
-              into reusable skills · forgetting stale memories · catastrophic interference
-            </p>
-          </div>
-
-          <div class="border-t-2 border-ember/70 pt-4">
-            <div class="flex items-baseline gap-3 mb-2">
-              <span class="font-mono text-xs text-ember font-medium">04</span>
-              <h4 class="font-semibold text-[1.0625rem] leading-snug">Memory in world models &amp; long-horizon planning</h4>
-            </div>
-            <p class="text-sm text-ink/70 leading-relaxed">
-              Memory-augmented action-conditioned prediction · spatial and physical consistency over long
-              rollouts · hallucination in revisited scenes · memory-conditioned planning · hierarchical task state
-            </p>
-          </div>
-
-          <div class="border-t-2 border-ember/70 pt-4">
-            <div class="flex items-baseline gap-3 mb-2">
-              <span class="font-mono text-xs text-ember font-medium">05</span>
-              <h4 class="font-semibold text-[1.0625rem] leading-snug">Benchmarks, datasets &amp; evaluation protocols</h4>
-            </div>
-            <p class="text-sm text-ink/70 leading-relaxed">
-              Genuinely partially observable, history-dependent tasks · temporal, spatial, object and procedural
-              memory taxonomies · controls that rule out longer context, memorization and task shortcuts
-            </p>
-          </div>
-
-          <div class="border-t-2 border-ember/70 pt-4">
-            <div class="flex items-baseline gap-3 mb-2">
-              <span class="font-mono text-xs text-ember font-medium">06</span>
-              <h4 class="font-semibold text-[1.0625rem] leading-snug">Human-centered memory</h4>
-            </div>
-            <p class="text-sm text-ink/70 leading-relaxed">
-              Preferences, instructions and corrections across sessions and users · interpretable and editable
-              memory · privacy, consent and the right to be forgotten
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- ---------- SUBMISSION GUIDELINES ---------- -->
-      <div class="reveal">
-        <h3 class="font-serif font-semibold text-2xl sm:text-3xl tracking-tight mb-9">Submission Guidelines</h3>
-
-        <ul class="max-w-3xl space-y-5 text-[1.0625rem] leading-relaxed text-ink/75">
-          <li class="flex gap-3.5">
-            <span class="mt-[0.6rem] w-1.5 h-1.5 rounded-full bg-ember shrink-0"></span>
-            <span><strong class="font-semibold text-ink">Page Limit:</strong> We welcome submissions of up to
-              4 pages (excluding references) describing completed research, ongoing work, or benchmark
-              datasets relevant to the workshop topics.</span>
-          </li>
-          <li class="flex gap-3.5">
-            <span class="mt-[0.6rem] w-1.5 h-1.5 rounded-full bg-ember shrink-0"></span>
-            <span><strong class="font-semibold text-ink">Appendix:</strong> An optional appendix is allowed and
-              does not count toward the 4-page limit. Place it after the references; reviewers are not
-              required to read it.</span>
-          </li>
-          <li class="flex gap-3.5">
-            <span class="mt-[0.6rem] w-1.5 h-1.5 rounded-full bg-ember shrink-0"></span>
-            <span><strong class="font-semibold text-ink">Formatting:</strong> Authors are encouraged to use the
-              <a href="https://drive.google.com/file/d/1R9irIW0ImqeDHh5g8Ukm2XGy91sWxOsQ/view?usp=drive_link"
-                 target="_blank" rel="noopener"
-                 class="font-medium text-ember link-underline hover:text-ink transition-colors">CoRL 2026 paper template</a>.</span>
-          </li>
-          <li class="flex gap-3.5">
-            <span class="mt-[0.6rem] w-1.5 h-1.5 rounded-full bg-ember shrink-0"></span>
-            <span><strong class="font-semibold text-ink">Reviews:</strong> Each submission will receive at least
-              two reviews from the organizing committee and external reviewers.</span>
-          </li>
-          <li class="flex gap-3.5">
-            <span class="mt-[0.6rem] w-1.5 h-1.5 rounded-full bg-ember shrink-0"></span>
-            <span><strong class="font-semibold text-ink">Anonymity:</strong> All submissions will be
-              double-anonymized.</span>
-          </li>
-          <li class="flex gap-3.5">
-            <span class="mt-[0.6rem] w-1.5 h-1.5 rounded-full bg-ember shrink-0"></span>
-            <span><strong class="font-semibold text-ink">Dual Submission:</strong> We welcome submissions that
-              are under review or recently published at relevant venues.</span>
-          </li>
-          <li class="flex gap-3.5">
-            <span class="mt-[0.6rem] w-1.5 h-1.5 rounded-full bg-ember shrink-0"></span>
-            <span><strong class="font-semibold text-ink">Non-Archival:</strong> This workshop is non-archival.
-              Accepted papers will be posted on the workshop website.</span>
-          </li>
-          <li class="flex gap-3.5">
-            <span class="mt-[0.6rem] w-1.5 h-1.5 rounded-full bg-ember shrink-0"></span>
-            <span><strong class="font-semibold text-ink">Presentation:</strong> Accepted papers will be presented
-              in an interactive poster session, with the top 3–5 papers selected for oral spotlight
-              presentations. Authors are expected to present in person.</span>
-          </li>
-        </ul>
-
-        <!-- ---------- SUBMIT CTA ---------- -->
-        <div class="mt-12 text-center">
-          <a href="https://openreview.net/group?id=robot-learning.org/CoRL/2026/Workshop/RoboMem"
-             target="_blank" rel="noopener"
-             class="cta inline-flex rounded-full px-9 py-4 font-bold text-base tracking-wide">
-            <span class="flex items-center gap-2.5">Submit on OpenReview <span aria-hidden="true">→</span></span>
-          </a>
-          <p class="text-xs text-ink/50 mt-4">Submissions close September 30, 2026 · 23:59 Anywhere on Earth (Oct 1, 8:00 AM EDT).</p>
-        </div>
-      </div>
-
     </div>
   </section>
 
@@ -693,7 +525,7 @@
           <a href="#speakers" class="hover:text-cream transition-colors">Speakers</a>
           <a href="#schedule" class="hover:text-cream transition-colors">Schedule</a>
           <a href="#challenges" class="hover:text-cream transition-colors">Open Problems</a>
-          <a href="#cfp" class="hover:text-cream transition-colors">Call for Papers</a>
+          <a href="cfp.html" class="hover:text-cream transition-colors">Call for Papers</a>
         </nav>
       </div>
       <div class="pt-8 text-sm">
@@ -731,39 +563,6 @@
       entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
     }, { threshold: 0.12 });
     document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-
-    // Countdown to the submission deadline.
-    // Sept 30, 2026, 23:59:59 Anywhere on Earth (AoE = UTC-12) → Oct 1, 11:59:59 UTC.
-    const DEADLINE = Date.UTC(2026, 9, 1, 11, 59, 59);
-    const cd = {
-      wrap: document.getElementById('countdown'),
-      label: document.getElementById('countdown-label'),
-      closed: document.getElementById('countdown-closed'),
-      d: document.getElementById('cd-d'),
-      h: document.getElementById('cd-h'),
-      m: document.getElementById('cd-m'),
-      s: document.getElementById('cd-s'),
-    };
-
-    function tickCountdown() {
-      let left = Math.floor((DEADLINE - Date.now()) / 1000);
-      if (left <= 0) {
-        cd.wrap.classList.add('hidden');
-        cd.label.classList.add('hidden');
-        cd.closed.classList.remove('hidden');
-        return false;
-      }
-      const pad = n => String(n).padStart(2, '0');
-      cd.d.textContent = Math.floor(left / 86400);
-      cd.h.textContent = pad(Math.floor(left / 3600) % 24);
-      cd.m.textContent = pad(Math.floor(left / 60) % 60);
-      cd.s.textContent = pad(left % 60);
-      return true;
-    }
-
-    if (tickCountdown()) {
-      const timer = setInterval(() => { if (!tickCountdown()) clearInterval(timer); }, 1000);
-    }
   </script>
 
 </body>

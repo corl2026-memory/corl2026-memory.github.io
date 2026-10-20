@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Call for Papers — Memory for Robot Foundation Models · CoRL 2026</title>
+  <meta name="description" content="A CoRL 2026 half-day workshop on memory for robot foundation models and vision–language–action (VLA) models: what robots should remember, and how memory should be learned, built, evaluated, and deployed." />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['Fraunces', 'Georgia', 'serif'],
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            ink:    { DEFAULT: '#15161d', soft: '#23252f' },
+            cream:  { DEFAULT: '#f7f3ea', deep: '#efe9db' },
+            ember:  { DEFAULT: '#c6700f', light: '#e0902a', soft: '#f3e2c8' },
+          },
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body { -webkit-font-smoothing: antialiased; }
+
+    /* Memory-lattice dot field used behind the dark hero */
+    .lattice {
+      background-image:
+        radial-gradient(rgba(224,144,42,0.55) 1.4px, transparent 1.6px),
+        radial-gradient(rgba(255,255,255,0.07) 1.4px, transparent 1.6px);
+      background-size: 46px 46px, 23px 23px;
+      background-position: 0 0, 11px 11px;
+      mask-image: radial-gradient(ellipse 90% 75% at 50% 35%, #000 30%, transparent 80%);
+      -webkit-mask-image: radial-gradient(ellipse 90% 75% at 50% 35%, #000 30%, transparent 80%);
+    }
+
+    /* Section-entry reveal */
+    .reveal { opacity: 0; transform: translateY(22px); transition: opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1); }
+    .reveal.in { opacity: 1; transform: none; }
+
+    .link-underline { background-image: linear-gradient(currentColor,currentColor); background-size: 0% 1.5px; background-repeat: no-repeat; background-position: 0 100%; transition: background-size .3s ease; }
+    .link-underline:hover { background-size: 100% 1.5px; }
+
+    /* High-visibility CTA: warm gradient + sweeping shine, crisp edge (no outer glow) */
+    .cta {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(100deg, #e0902a 0%, #f5b153 45%, #c6700f 100%);
+      color: #15161d;
+      transition: transform .2s ease, filter .2s ease;
+    }
+    .cta::after {
+      content: "";
+      position: absolute; inset: 0;
+      pointer-events: none;
+      background: linear-gradient(105deg, transparent 34%, rgba(255,255,255,0.6) 50%, transparent 66%);
+      transform: translateX(-130%);
+      animation: ctaShine 3.8s ease-in-out infinite;
+    }
+    .cta:hover { transform: translateY(-2px); filter: brightness(1.06); }
+    .cta > * { position: relative; z-index: 1; }
+
+    @keyframes ctaShine { 0%, 58% { transform: translateX(-130%); } 88%, 100% { transform: translateX(130%); } }
+
+    /* Key-dates banner */
+    .date-banner {
+      background: linear-gradient(135deg, #1d1f29 0%, #15161d 52%, #2a1d10 100%);
+      box-shadow: 0 26px 60px -32px rgba(21,22,29,0.7), inset 0 1px 0 rgba(255,255,255,0.06);
+    }
+    .pulse-dot { animation: dotPulse 1.9s ease-in-out infinite; }
+    @keyframes dotPulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(224,144,42,0.7); opacity: 1; }
+      70%      { box-shadow: 0 0 0 7px rgba(224,144,42,0); opacity: .75; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .cta, .cta::after, .pulse-dot { animation: none; }
+      .reveal { opacity: 1; transform: none; transition: none; }
+    }
+
+    ::selection { background: #e0902a; color: #15161d; }
+  </style>
+</head>
+
+<body class="font-sans text-ink bg-cream antialiased">
+
+  <!-- ===================== NAV ===================== -->
+  <nav id="nav" class="fixed top-0 inset-x-0 z-50 transition-colors duration-300">
+    <div class="max-w-6xl mx-auto px-5 sm:px-6 h-16 flex items-center justify-between">
+      <a href="index.html" id="brand" class="font-serif font-semibold tracking-tight text-[15px] text-white transition-colors">
+        Memory&nbsp;·&nbsp;<span class="opacity-70">CoRL 2026</span>
+      </a>
+      <div id="navlinks" class="hidden md:flex items-center gap-7 text-[13px] font-medium text-white/80">
+        <a href="index.html#about" class="hover:text-white transition-colors">About</a>
+        <a href="index.html#speakers" class="hover:text-white transition-colors">Speakers</a>
+        <a href="index.html#schedule" class="hover:text-white transition-colors">Schedule</a>
+        <a href="index.html#challenges" class="hover:text-white transition-colors">Open Problems</a>
+        <a href="cfp.html" class="hover:text-white transition-colors">Call for Papers</a>
+        <a href="index.html#organizers" class="hover:text-white transition-colors">Organizers</a>
+      </div>
+      <a href="index.html#schedule" id="navcta" class="cta text-[13px] font-bold uppercase tracking-wider px-5 py-2.5 rounded-full">
+        <span class="flex items-center gap-1.5">Program <span aria-hidden="true">→</span></span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- ===================== HEADER ===================== -->
+  <header id="top" class="relative overflow-hidden bg-ink text-cream">
+    <div class="absolute inset-0 lattice pointer-events-none"></div>
+    <div class="relative max-w-5xl mx-auto px-5 sm:px-6 pt-32 pb-16 sm:pt-36 sm:pb-20">
+      <p class="text-ember-light font-semibold tracking-[0.28em] text-[11px] sm:text-xs uppercase mb-5">
+        CoRL 2026 · Memory for Robot Foundation Models
+      </p>
+      <h1 class="font-serif font-semibold leading-[1.06] tracking-tight text-[2.4rem] sm:text-5xl mb-5">Call for Papers</h1>
+      <p class="inline-flex items-center gap-2 text-sm text-cream/65">
+        <span class="w-2 h-2 rounded-full bg-ember-light"></span>
+        Submissions closed September 30, 2026 · Notifications by October 24, 2026
+      </p>
+    </div>
+  </header>
+
+  <!-- ===================== CALL FOR PAPERS ===================== -->
+  <section id="cfp" class="bg-cream py-20 px-5 sm:px-6">
+    <div class="max-w-5xl mx-auto">
+
+      <div class="max-w-2xl mb-16 reveal">
+        <p class="text-[1.0625rem] leading-relaxed text-ink/75">
+          We invited short papers on any aspect of memory for robot foundation models. Position papers,
+          works-in-progress, benchmark and dataset contributions, and negative or ablation results were
+          explicitly welcomed.
+        </p>
+      </div>
+
+      <!-- ---------- TOPICS OF INTEREST ---------- -->
+      <div class="reveal mb-16">
+        <h3 class="font-serif font-semibold text-2xl sm:text-3xl tracking-tight mb-9">Topics of Interest</h3>
+
+        <div class="grid sm:grid-cols-2 gap-x-12 gap-y-8">
+          <div class="border-t-2 border-ember/70 pt-4">
+            <div class="flex items-baseline gap-3 mb-2">
+              <span class="font-mono text-xs text-ember font-medium">01</span>
+              <h4 class="font-semibold text-[1.0625rem] leading-snug">Memory architectures &amp; implementation</h4>
+            </div>
+            <p class="text-sm text-ink/70 leading-relaxed">
+              Recurrent and state-space memory · compressed or gated KV caches · external memory banks ·
+              retrieval-augmented policies · on-robot latency and compute budgets
+            </p>
+          </div>
+
+          <div class="border-t-2 border-ember/70 pt-4">
+            <div class="flex items-baseline gap-3 mb-2">
+              <span class="font-mono text-xs text-ember font-medium">02</span>
+              <h4 class="font-semibold text-[1.0625rem] leading-snug">Spatial &amp; scene memory</h4>
+            </div>
+            <p class="text-sm text-ink/70 leading-relaxed">
+              Persistent 3D and 4D scene representations · semantic maps · object-centric and surfel memory ·
+              Gaussian splats · object permanence under occlusion · re-localization and revisit consistency
+            </p>
+          </div>
+
+          <div class="border-t-2 border-ember/70 pt-4">
+            <div class="flex items-baseline gap-3 mb-2">
+              <span class="font-mono text-xs text-ember font-medium">03</span>
+              <h4 class="font-semibold text-[1.0625rem] leading-snug">Episodic memory, retrieval &amp; lifelong improvement</h4>
+            </div>
+            <p class="text-sm text-ink/70 leading-relaxed">
+              Recall of trajectories, failures and corrections · retrieval-based adaptation · consolidation
+              into reusable skills · forgetting stale memories · catastrophic interference
+            </p>
+          </div>
+
+          <div class="border-t-2 border-ember/70 pt-4">
+            <div class="flex items-baseline gap-3 mb-2">
+              <span class="font-mono text-xs text-ember font-medium">04</span>
+              <h4 class="font-semibold text-[1.0625rem] leading-snug">Memory in world models &amp; long-horizon planning</h4>
+            </div>
+            <p class="text-sm text-ink/70 leading-relaxed">
+              Memory-augmented action-conditioned prediction · spatial and physical consistency over long
+              rollouts · hallucination in revisited scenes · memory-conditioned planning · hierarchical task state
+            </p>
+          </div>
+
+          <div class="border-t-2 border-ember/70 pt-4">
+            <div class="flex items-baseline gap-3 mb-2">
+              <span class="font-mono text-xs text-ember font-medium">05</span>
+              <h4 class="font-semibold text-[1.0625rem] leading-snug">Benchmarks, datasets &amp; evaluation protocols</h4>
+            </div>
+            <p class="text-sm text-ink/70 leading-relaxed">
+              Genuinely partially observable, history-dependent tasks · temporal, spatial, object and procedural
+              memory taxonomies · controls that rule out longer context, memorization and task shortcuts
+            </p>
+          </div>
+
+          <div class="border-t-2 border-ember/70 pt-4">
+            <div class="flex items-baseline gap-3 mb-2">
+              <span class="font-mono text-xs text-ember font-medium">06</span>
+              <h4 class="font-semibold text-[1.0625rem] leading-snug">Human-centered memory</h4>
+            </div>
+            <p class="text-sm text-ink/70 leading-relaxed">
+              Preferences, instructions and corrections across sessions and users · interpretable and editable
+              memory · privacy, consent and the right to be forgotten
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ---------- SUBMISSION GUIDELINES ---------- -->
+      <div class="reveal">
+        <h3 class="font-serif font-semibold text-2xl sm:text-3xl tracking-tight mb-9">Submission Guidelines</h3>
+
+        <ul class="max-w-3xl space-y-5 text-[1.0625rem] leading-relaxed text-ink/75">
+          <li class="flex gap-3.5">
+            <span class="mt-[0.6rem] w-1.5 h-1.5 rounded-full bg-ember shrink-0"></span>
+            <span><strong class="font-semibold text-ink">Page Limit:</strong> We welcome submissions of up to
+              4 pages (excluding references) describing completed research, ongoing work, or benchmark
+              datasets relevant to the workshop topics.</span>
+          </li>
+          <li class="flex gap-3.5">
+            <span class="mt-[0.6rem] w-1.5 h-1.5 rounded-full bg-ember shrink-0"></span>
+            <span><strong class="font-semibold text-ink">Appendix:</strong> An optional appendix is allowed and
+              does not count toward the 4-page limit. Place it after the references; reviewers are not
+              required to read it.</span>
+          </li>
+          <li class="flex gap-3.5">
+            <span class="mt-[0.6rem] w-1.5 h-1.5 rounded-full bg-ember shrink-0"></span>
+            <span><strong class="font-semibold text-ink">Formatting:</strong> Authors are encouraged to use the
+              <a href="https://drive.google.com/file/d/1R9irIW0ImqeDHh5g8Ukm2XGy91sWxOsQ/view?usp=drive_link"
+                 target="_blank" rel="noopener"
+                 class="font-medium text-ember link-underline hover:text-ink transition-colors">CoRL 2026 paper template</a>.</span>
+          </li>
+          <li class="flex gap-3.5">
+            <span class="mt-[0.6rem] w-1.5 h-1.5 rounded-full bg-ember shrink-0"></span>
+            <span><strong class="font-semibold text-ink">Reviews:</strong> Each submission will receive at least
+              two reviews from the organizing committee and external reviewers.</span>
+          </li>
+          <li class="flex gap-3.5">
+            <span class="mt-[0.6rem] w-1.5 h-1.5 rounded-full bg-ember shrink-0"></span>
+            <span><strong class="font-semibold text-ink">Anonymity:</strong> All submissions will be
+              double-anonymized.</span>
+          </li>
+          <li class="flex gap-3.5">
+            <span class="mt-[0.6rem] w-1.5 h-1.5 rounded-full bg-ember shrink-0"></span>
+            <span><strong class="font-semibold text-ink">Dual Submission:</strong> We welcome submissions that
+              are under review or recently published at relevant venues.</span>
+          </li>
+          <li class="flex gap-3.5">
+            <span class="mt-[0.6rem] w-1.5 h-1.5 rounded-full bg-ember shrink-0"></span>
+            <span><strong class="font-semibold text-ink">Non-Archival:</strong> This workshop is non-archival.
+              Accepted papers will be posted on the workshop website.</span>
+          </li>
+          <li class="flex gap-3.5">
+            <span class="mt-[0.6rem] w-1.5 h-1.5 rounded-full bg-ember shrink-0"></span>
+            <span><strong class="font-semibold text-ink">Presentation:</strong> Accepted papers will be presented
+              in an interactive poster session, with the top 3–5 papers selected for oral spotlight
+              presentations. Authors are expected to present in person.</span>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="bg-ink text-cream/60 py-14 px-5 sm:px-6">
+    <div class="max-w-5xl mx-auto">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-8 border-b border-white/10 pb-10">
+        <div>
+          <p class="font-serif font-semibold text-cream text-xl tracking-tight">Memory for Robot Foundation Models</p>
+          <p class="text-sm mt-2">A half-day workshop at CoRL 2026 · Austin, TX, USA · November 12, 2026</p>
+        </div>
+        <nav class="flex flex-wrap gap-x-6 gap-y-2 text-sm">
+          <a href="index.html#about" class="hover:text-cream transition-colors">About</a>
+          <a href="index.html#speakers" class="hover:text-cream transition-colors">Speakers</a>
+          <a href="index.html#schedule" class="hover:text-cream transition-colors">Schedule</a>
+          <a href="index.html#challenges" class="hover:text-cream transition-colors">Open Problems</a>
+          <a href="cfp.html" class="hover:text-cream transition-colors">Call for Papers</a>
+        </nav>
+      </div>
+      <div class="pt-8 text-sm">
+        <p>© 2026 Memory for Robot Foundation Models · Workshop Organizers</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===================== SCRIPTS ===================== -->
+  <script>
+    // Nav: transparent over hero, solid (cream) after scroll
+    const nav = document.getElementById('nav');
+    const brand = document.getElementById('brand');
+    const navlinks = document.getElementById('navlinks');
+
+    function onScroll() {
+      const solid = window.scrollY > 60;
+      nav.classList.toggle('bg-cream/95', solid);
+      nav.classList.toggle('backdrop-blur', solid);
+      nav.classList.toggle('shadow-sm', solid);
+      nav.classList.toggle('border-b', solid);
+      nav.classList.toggle('border-ink/10', solid);
+
+      brand.classList.toggle('text-white', !solid);
+      brand.classList.toggle('text-ink', solid);
+
+      navlinks.classList.toggle('text-white/80', !solid);
+      navlinks.classList.toggle('text-ink/70', solid);
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    // Reveal on scroll
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  </script>
+
+</body>
+</html>

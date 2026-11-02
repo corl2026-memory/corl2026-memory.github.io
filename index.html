@@ -5,6 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Memory for Robot Foundation Models — CoRL 2026 Workshop</title>
   <meta name="description" content="A CoRL 2026 half-day workshop on memory for robot foundation models and vision–language–action (VLA) models: what robots should remember, and how memory should be learned, built, evaluated, and deployed." />
+  <meta property="og:title" content="Memory for Robot Foundation Models — CoRL 2026 Workshop" />
+  <meta property="og:description" content="November 12, 2026 · Hilton Austin, Room 408 · Austin, TX" />
+  <meta property="og:image" content="https://corl2026-memory.github.io/assets/social-banner.jpg" />
+  <meta property="og:url" content="https://corl2026-memory.github.io/" />
+  <meta name="twitter:card" content="summary_large_image" />
 
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -33,6 +38,17 @@
   <style>
     html { scroll-behavior: smooth; }
     body { -webkit-font-smoothing: antialiased; }
+
+    /* Austin skyline photo on the right of the hero */
+    .hero-skyline {
+      background: url('assets/hero-skyline.jpg') center / cover no-repeat;
+      opacity: .35;
+      -webkit-mask-image: linear-gradient(90deg, transparent 35%, #000 80%), linear-gradient(180deg, #000 70%, transparent 100%);
+      -webkit-mask-composite: source-in;
+      mask-image: linear-gradient(90deg, transparent 35%, #000 80%), linear-gradient(180deg, #000 70%, transparent 100%);
+      mask-composite: intersect;
+    }
+    @media (min-width: 768px) { .hero-skyline { opacity: .9; } }
 
     /* Memory-lattice dot field used behind the dark hero */
     .lattice {
@@ -119,6 +135,8 @@
   <!-- ===================== HERO ===================== -->
   <header id="top" class="relative overflow-hidden bg-ink text-cream">
     <div class="absolute inset-0 lattice pointer-events-none"></div>
+    <!-- Austin skyline, fading into the dark hero on the left -->
+    <div class="hero-skyline absolute inset-y-0 right-0 w-full md:w-[64%] pointer-events-none" aria-hidden="true"></div>
     <!-- gradient wash -->
     <div class="absolute inset-0 pointer-events-none"
          style="background:

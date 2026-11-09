@@ -26,9 +26,10 @@
             mono: ['"JetBrains Mono"', 'monospace'],
           },
           colors: {
-            ink:    { DEFAULT: '#15161d', soft: '#23252f' },
-            cream:  { DEFAULT: '#f7f3ea', deep: '#efe9db' },
+            ink:    { DEFAULT: '#0f1729', soft: '#1b2540' },
+            cream:  { DEFAULT: '#f6f8fb', deep: '#e7eef6' },
             ember:  { DEFAULT: '#c6700f', light: '#e0902a', soft: '#f3e2c8' },
+            sky:    { DEFAULT: '#1f78b8', light: '#4cc3f2', soft: '#dcecf8' },
           },
         }
       }
@@ -53,7 +54,7 @@
     /* Memory-lattice dot field used behind the dark hero */
     .lattice {
       background-image:
-        radial-gradient(rgba(224,144,42,0.55) 1.4px, transparent 1.6px),
+        radial-gradient(rgba(76,195,242,0.45) 1.4px, transparent 1.6px),
         radial-gradient(rgba(255,255,255,0.07) 1.4px, transparent 1.6px);
       background-size: 46px 46px, 23px 23px;
       background-position: 0 0, 11px 11px;
@@ -73,7 +74,7 @@
       position: relative;
       overflow: hidden;
       background: linear-gradient(100deg, #e0902a 0%, #f5b153 45%, #c6700f 100%);
-      color: #15161d;
+      color: #0f1729;
       transition: transform .2s ease, filter .2s ease;
     }
     .cta::after {
@@ -91,8 +92,8 @@
 
     /* Key-dates banner */
     .date-banner {
-      background: linear-gradient(135deg, #1d1f29 0%, #15161d 52%, #2a1d10 100%);
-      box-shadow: 0 26px 60px -32px rgba(21,22,29,0.7), inset 0 1px 0 rgba(255,255,255,0.06);
+      background: linear-gradient(135deg, #16244a 0%, #0f1729 55%, #2a1d10 100%);
+      box-shadow: 0 26px 60px -32px rgba(15,23,41,0.7), inset 0 1px 0 rgba(255,255,255,0.06);
     }
     .pulse-dot { animation: dotPulse 1.9s ease-in-out infinite; }
     @keyframes dotPulse {
@@ -106,7 +107,7 @@
       .reveal { opacity: 1; transform: none; transition: none; }
     }
 
-    ::selection { background: #e0902a; color: #15161d; }
+    ::selection { background: #e0902a; color: #0f1729; }
   </style>
 </head>
 
@@ -118,10 +119,11 @@
       <a href="#top" id="brand" class="font-serif font-semibold tracking-tight text-[15px] text-white transition-colors">
         Memory&nbsp;·&nbsp;<span class="opacity-70">CoRL 2026</span>
       </a>
-      <div id="navlinks" class="hidden md:flex items-center gap-7 text-[13px] font-medium text-white/80">
+      <div id="navlinks" class="hidden lg:flex items-center gap-6 whitespace-nowrap text-[13px] font-medium text-white/80">
         <a href="#about" class="hover:text-white transition-colors">About</a>
         <a href="#speakers" class="hover:text-white transition-colors">Speakers</a>
         <a href="#schedule" class="hover:text-white transition-colors">Schedule</a>
+        <a href="papers.html" class="hover:text-white transition-colors">Accepted Papers</a>
         <a href="#challenges" class="hover:text-white transition-colors">Open Problems</a>
         <a href="cfp.html" class="hover:text-white transition-colors">Call for Papers</a>
         <a href="#organizers" class="hover:text-white transition-colors">Organizers</a>
@@ -141,11 +143,11 @@
     <div class="absolute inset-0 pointer-events-none"
          style="background:
            radial-gradient(900px 520px at 78% -10%, rgba(224,144,42,0.20), transparent 60%),
-           radial-gradient(760px 520px at 12% 8%, rgba(86,96,160,0.22), transparent 62%),
-           linear-gradient(180deg, rgba(21,22,29,0) 60%, rgba(21,22,29,0.6) 100%);"></div>
+           radial-gradient(760px 520px at 12% 8%, rgba(56,120,200,0.30), transparent 62%),
+           linear-gradient(180deg, rgba(15,23,41,0) 60%, rgba(15,23,41,0.6) 100%);"></div>
 
     <div class="relative max-w-5xl mx-auto px-5 sm:px-6 pt-36 pb-24 sm:pt-40 sm:pb-28">
-      <p class="text-ember-light font-semibold tracking-[0.28em] text-[11px] sm:text-xs uppercase mb-6">
+      <p class="text-sky-light font-semibold tracking-[0.28em] text-[11px] sm:text-xs uppercase mb-6">
         Conference on Robot Learning 2026
       </p>
       <h1 class="font-serif font-semibold leading-[1.04] tracking-tight text-[2.6rem] sm:text-6xl md:text-[4.4rem] mb-6">
@@ -165,18 +167,18 @@
            class="px-6 py-3 rounded-full border-2 border-ember-light text-ember-light font-bold text-sm hover:bg-ember-light hover:text-ink transition-colors">
           Ask the Panel a Question
         </a>
-        <a href="cfp.html" class="px-6 py-3 rounded-full border border-white/30 text-cream font-semibold text-sm hover:bg-white/10 transition-colors">
-          Call for Papers
+        <a href="papers.html" class="px-6 py-3 rounded-full border border-white/30 text-cream font-semibold text-sm hover:bg-white/10 transition-colors">
+          Accepted Papers
         </a>
       </div>
 
       <!-- detail strip -->
       <div class="flex flex-wrap items-center gap-x-8 gap-y-3 text-base sm:text-lg font-medium text-cream/90 border-t border-white/10 pt-6">
         <span class="flex items-center gap-2">
-          <span class="text-ember-light">◷</span> November 12, 2026 · 8:30 AM – 12:30 PM
+          <span class="text-sky-light">◷</span> November 12, 2026 · 8:30 AM – 12:30 PM
         </span>
         <span class="flex items-center gap-2">
-          <span class="text-ember-light">⌖</span> Hilton Austin · Room 408
+          <span class="text-sky-light">⌖</span> Hilton Austin · Room 408
         </span>
         <a href="#dates" class="flex items-center gap-2 text-ember-light font-semibold hover:text-cream transition-colors">
           <span class="pulse-dot w-2 h-2 rounded-full bg-ember-light"></span> Camera-ready due Nov 6
@@ -188,7 +190,7 @@
   <!-- ===================== ABOUT ===================== -->
   <section id="about" class="bg-cream py-20 px-5 sm:px-6">
     <div class="max-w-3xl mx-auto reveal">
-      <p class="text-ember font-semibold tracking-[0.2em] text-xs uppercase mb-4">About the Workshop</p>
+      <p class="text-sky font-semibold tracking-[0.2em] text-xs uppercase mb-4">About the Workshop</p>
       <h2 class="font-serif font-semibold text-3xl sm:text-4xl tracking-tight mb-7 leading-tight">
         Memory is central to embodied intelligence.
       </h2>
@@ -222,7 +224,7 @@
     <div class="absolute inset-0 lattice opacity-40 pointer-events-none"></div>
     <div class="relative max-w-5xl mx-auto">
       <div class="text-center mb-14 reveal">
-        <p class="text-ember-light font-semibold tracking-[0.2em] text-xs uppercase mb-4">Speakers</p>
+        <p class="text-sky-light font-semibold tracking-[0.2em] text-xs uppercase mb-4">Speakers</p>
         <h2 class="font-serif font-semibold text-3xl sm:text-4xl tracking-tight">Invited Speakers</h2>
       </div>
 
@@ -231,7 +233,7 @@
           <div class="relative w-28 h-28 mx-auto mb-4">
             <img src="assets/speakers/bernadette_bucher.png"
                  alt="Bernadette Bucher" class="w-28 h-28 rounded-full object-cover ring-1 ring-white/15" />
-            <span class="absolute -bottom-1 left-1/2 -translate-x-1/2 text-[10px] font-semibold tracking-wide uppercase bg-ember-light text-ink px-2 py-0.5 rounded-full">In&nbsp;Person</span>
+            <span class="absolute -bottom-1 left-1/2 -translate-x-1/2 text-[10px] font-semibold tracking-wide uppercase bg-sky-light text-ink px-2 py-0.5 rounded-full">In&nbsp;Person</span>
           </div>
           <a href="https://bucherb.github.io/" target="_blank" rel="noopener"
              class="font-semibold text-cream link-underline">Bernadette Bucher</a>
@@ -242,7 +244,7 @@
           <div class="relative w-28 h-28 mx-auto mb-4">
             <img src="assets/speakers/yuejiang_liu.jpg"
                  alt="Yuejiang Liu" class="w-28 h-28 rounded-full object-cover ring-1 ring-white/15" />
-            <span class="absolute -bottom-1 left-1/2 -translate-x-1/2 text-[10px] font-semibold tracking-wide uppercase bg-ember-light text-ink px-2 py-0.5 rounded-full">In&nbsp;Person</span>
+            <span class="absolute -bottom-1 left-1/2 -translate-x-1/2 text-[10px] font-semibold tracking-wide uppercase bg-sky-light text-ink px-2 py-0.5 rounded-full">In&nbsp;Person</span>
           </div>
           <a href="https://yuejiangliu.github.io/" target="_blank" rel="noopener"
              class="font-semibold text-cream link-underline">Yuejiang Liu</a>
@@ -253,7 +255,7 @@
           <div class="relative w-28 h-28 mx-auto mb-4">
             <img src="assets/speakers/katerina_fragkiadaki.png"
                  alt="Katerina Fragkiadaki" class="w-28 h-28 rounded-full object-cover ring-1 ring-white/15" />
-            <span class="absolute -bottom-1 left-1/2 -translate-x-1/2 text-[10px] font-semibold tracking-wide uppercase bg-ember-light text-ink px-2 py-0.5 rounded-full">In&nbsp;Person</span>
+            <span class="absolute -bottom-1 left-1/2 -translate-x-1/2 text-[10px] font-semibold tracking-wide uppercase bg-sky-light text-ink px-2 py-0.5 rounded-full">In&nbsp;Person</span>
           </div>
           <a href="https://www.cs.cmu.edu/~katef/" target="_blank" rel="noopener"
              class="font-semibold text-cream link-underline">Katerina Fragkiadaki</a>
@@ -264,7 +266,7 @@
           <div class="relative w-28 h-28 mx-auto mb-4">
             <img src="assets/speakers/karl_pertsch.jpg"
                  alt="Karl Pertsch" class="w-28 h-28 rounded-full object-cover ring-1 ring-white/15" />
-            <span class="absolute -bottom-1 left-1/2 -translate-x-1/2 text-[10px] font-semibold tracking-wide uppercase bg-ember-light text-ink px-2 py-0.5 rounded-full">In&nbsp;Person</span>
+            <span class="absolute -bottom-1 left-1/2 -translate-x-1/2 text-[10px] font-semibold tracking-wide uppercase bg-sky-light text-ink px-2 py-0.5 rounded-full">In&nbsp;Person</span>
           </div>
           <a href="https://kpertsch.github.io/" target="_blank" rel="noopener"
              class="font-semibold text-cream link-underline">Karl Pertsch</a>
@@ -273,7 +275,7 @@
       </div>
 
       <div class="mt-16 pt-12 border-t border-white/10 reveal">
-        <p class="text-center text-ember-light font-semibold tracking-[0.2em] text-xs uppercase mb-10">Additional Panelists</p>
+        <p class="text-center text-sky-light font-semibold tracking-[0.2em] text-xs uppercase mb-10">Additional Panelists</p>
         <div class="grid grid-cols-2 gap-8 max-w-md mx-auto">
           <div class="text-center">
             <img src="assets/speakers/coline_devin.jpg"
@@ -306,7 +308,7 @@
   <section id="schedule" class="bg-cream py-20 px-5 sm:px-6">
     <div class="max-w-3xl mx-auto">
       <div class="mb-14 reveal">
-        <p class="text-ember font-semibold tracking-[0.2em] text-xs uppercase mb-4">Program</p>
+        <p class="text-sky font-semibold tracking-[0.2em] text-xs uppercase mb-4">Program</p>
         <h2 class="font-serif font-semibold text-3xl sm:text-4xl tracking-tight leading-tight">Half-day schedule</h2>
         <p class="mt-4 text-ink/70">November 12, 2026 · 8:30 AM – 12:30 PM · <a href="https://www.google.com/maps/search/?api=1&amp;query=Hilton+Austin+500+E+4th+St+Austin+TX+78701" target="_blank" rel="noopener" class="font-medium text-ember link-underline hover:text-ink transition-colors">Hilton Austin, Room 408</a> · 500 E 4th St, Austin, TX 78701</p>
       </div>
@@ -320,17 +322,17 @@
           </div>
         </li>
         <li class="relative pl-8 py-3">
-          <span class="absolute -left-[6.5px] top-5 w-3 h-3 rounded-full bg-ink/30 ring-4 ring-cream"></span>
+          <span class="absolute -left-[6.5px] top-5 w-3 h-3 rounded-full bg-sky ring-4 ring-cream"></span>
           <div class="flex flex-col sm:flex-row sm:items-baseline sm:gap-5">
             <span class="font-mono text-sm text-ink/50 sm:w-40 shrink-0">08:40 – 09:10</span>
             <span class="font-medium">Invited Talk: Katerina Fragkiadaki
               <span class="block text-sm text-ink/55 font-normal mt-0.5">Carnegie Mellon University</span>
-              <span class="block text-sm text-ink/40 font-normal italic mt-0.5">Title TBD</span>
+              <span class="block text-sm text-sky font-normal italic mt-0.5">“A Memory You Can Point To: Grounded Reasoning in 3D”</span>
             </span>
           </div>
         </li>
         <li class="relative pl-8 py-3">
-          <span class="absolute -left-[6.5px] top-5 w-3 h-3 rounded-full bg-ink/30 ring-4 ring-cream"></span>
+          <span class="absolute -left-[6.5px] top-5 w-3 h-3 rounded-full bg-sky ring-4 ring-cream"></span>
           <div class="flex flex-col sm:flex-row sm:items-baseline sm:gap-5">
             <span class="font-mono text-sm text-ink/50 sm:w-40 shrink-0">09:10 – 09:40</span>
             <span class="font-medium">Invited Talk: Bernadette Bucher
@@ -343,7 +345,35 @@
           <span class="absolute -left-[6.5px] top-5 w-3 h-3 rounded-full bg-ember ring-4 ring-cream"></span>
           <div class="flex flex-col sm:flex-row sm:items-baseline sm:gap-5">
             <span class="font-mono text-sm text-ink/50 sm:w-40 shrink-0">09:40 – 10:10</span>
-            <span class="font-medium">Lightning Talks <span class="text-ink/50 font-normal text-sm">· 6 talks × 5 min</span></span>
+            <span class="font-medium">Lightning Talks <span class="text-ink/50 font-normal text-sm">· 6 talks × 5 min</span>
+              <ol class="mt-2.5 space-y-2 text-sm font-normal leading-snug">
+                <li class="flex gap-3">
+                  <span class="font-mono text-xs text-ink/45 w-10 shrink-0 pt-0.5">9:40</span>
+                  <span><span class="text-ink/85">ECoMEM: Explicit Concept Memory for Memory-Dependent Robot Control</span> <span class="text-ink/50">— Yiqing Xu</span></span>
+                </li>
+                <li class="flex gap-3">
+                  <span class="font-mono text-xs text-ink/45 w-10 shrink-0 pt-0.5">9:45</span>
+                  <span><span class="text-ink/85">Not All Context Is Memory: Rethinking Time, Depth, and Space in VLA-Based Object Navigation</span> <span class="text-ink/50">— Behrad Rabiei</span></span>
+                </li>
+                <li class="flex gap-3">
+                  <span class="font-mono text-xs text-ink/45 w-10 shrink-0 pt-0.5">9:50</span>
+                  <span><span class="text-ink/85">Remember what you did?: Learning Behavioral Memories for Partially Observable Object Manipulation</span> <span class="text-ink/50">— Kuancheng Wang</span></span>
+                </li>
+                <li class="flex gap-3">
+                  <span class="font-mono text-xs text-ink/45 w-10 shrink-0 pt-0.5">9:55</span>
+                  <span><span class="text-ink/85">Mem4Act: Learning Effective Latent Memory for Long-Horizon Robotic Manipulation</span> <span class="text-ink/50">— Yun Zhang</span></span>
+                </li>
+                <li class="flex gap-3">
+                  <span class="font-mono text-xs text-ink/45 w-10 shrink-0 pt-0.5">10:00</span>
+                  <span><span class="text-ink/85">Revisiting Open-Loop Execution in Robotics: Toward Reactive, Higher-Performing Policies</span> <span class="text-ink/50">— Abhinav Agarwal</span></span>
+                </li>
+                <li class="flex gap-3">
+                  <span class="font-mono text-xs text-ink/45 w-10 shrink-0 pt-0.5">10:05</span>
+                  <span><span class="text-ink/85">Memory Without Curation: Learning Multi-Stream Latent Memory for Robot Policies</span> <span class="text-ink/50">— Yilin Wu</span></span>
+                </li>
+              </ol>
+              <a href="papers.html" class="inline-block mt-2.5 text-sm font-medium text-ember link-underline hover:text-ink transition-colors">All accepted papers →</a>
+            </span>
           </div>
         </li>
         <li class="relative pl-8 py-3">
@@ -354,7 +384,7 @@
           </div>
         </li>
         <li class="relative pl-8 py-3">
-          <span class="absolute -left-[6.5px] top-5 w-3 h-3 rounded-full bg-ink/30 ring-4 ring-cream"></span>
+          <span class="absolute -left-[6.5px] top-5 w-3 h-3 rounded-full bg-sky ring-4 ring-cream"></span>
           <div class="flex flex-col sm:flex-row sm:items-baseline sm:gap-5">
             <span class="font-mono text-sm text-ink/50 sm:w-40 shrink-0">10:40 – 11:10</span>
             <span class="font-medium">Invited Talk: Karl Pertsch
@@ -364,12 +394,12 @@
           </div>
         </li>
         <li class="relative pl-8 py-3">
-          <span class="absolute -left-[6.5px] top-5 w-3 h-3 rounded-full bg-ink/30 ring-4 ring-cream"></span>
+          <span class="absolute -left-[6.5px] top-5 w-3 h-3 rounded-full bg-sky ring-4 ring-cream"></span>
           <div class="flex flex-col sm:flex-row sm:items-baseline sm:gap-5">
             <span class="font-mono text-sm text-ink/50 sm:w-40 shrink-0">11:10 – 11:40</span>
             <span class="font-medium">Invited Talk: Yuejiang Liu
               <span class="block text-sm text-ink/55 font-normal mt-0.5">Stanford University</span>
-              <span class="block text-sm text-ember font-normal italic mt-0.5">“Towards Self-Improving Robot Memory”</span>
+              <span class="block text-sm text-sky font-normal italic mt-0.5">“Towards Self-Improving Robot Memory”</span>
             </span>
           </div>
         </li>
@@ -402,7 +432,7 @@
   <section id="challenges" class="bg-cream-deep py-20 px-5 sm:px-6">
     <div class="max-w-5xl mx-auto">
       <div class="max-w-2xl mb-14 reveal">
-        <p class="text-ember font-semibold tracking-[0.2em] text-xs uppercase mb-4">Open Problems</p>
+        <p class="text-sky font-semibold tracking-[0.2em] text-xs uppercase mb-4">Open Problems</p>
         <h2 class="font-serif font-semibold text-3xl sm:text-4xl tracking-tight leading-tight">
           Open problems we aim to address
         </h2>
@@ -410,7 +440,7 @@
 
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-ink/10 rounded-2xl overflow-hidden reveal">
         <div class="bg-cream p-7 hover:bg-ember-soft/60 transition-colors">
-          <span class="font-mono text-ember text-sm">01</span>
+          <span class="font-mono text-sky text-sm">01</span>
           <h3 class="font-serif font-semibold text-lg mt-3 mb-2 leading-snug">The role of memory in robot behavior</h3>
           <p class="text-sm text-ink/70 leading-relaxed">
             Beyond perception and policy execution, what should memory enable — tracking hidden state,
@@ -419,7 +449,7 @@
           </p>
         </div>
         <div class="bg-cream p-7 hover:bg-ember-soft/60 transition-colors">
-          <span class="font-mono text-ember text-sm">02</span>
+          <span class="font-mono text-sky text-sm">02</span>
           <h3 class="font-serif font-semibold text-lg mt-3 mb-2 leading-snug">What to store and retrieve</h3>
           <p class="text-sm text-ink/70 leading-relaxed">
             Observations, language summaries, object states, maps, action traces, failures, preferences, or
@@ -428,7 +458,7 @@
           </p>
         </div>
         <div class="bg-cream p-7 hover:bg-ember-soft/60 transition-colors">
-          <span class="font-mono text-ember text-sm">03</span>
+          <span class="font-mono text-sky text-sm">03</span>
           <h3 class="font-serif font-semibold text-lg mt-3 mb-2 leading-snug">Consolidation, abstraction &amp; forgetting</h3>
           <p class="text-sm text-ink/70 leading-relaxed">
             How should robots compress repeated experience into reusable knowledge, preserve rare but
@@ -436,7 +466,7 @@
           </p>
         </div>
         <div class="bg-cream p-7 hover:bg-ember-soft/60 transition-colors">
-          <span class="font-mono text-ember text-sm">04</span>
+          <span class="font-mono text-sky text-sm">04</span>
           <h3 class="font-serif font-semibold text-lg mt-3 mb-2 leading-snug">Integrating memory with policies &amp; planners</h3>
           <p class="text-sm text-ink/70 leading-relaxed">
             Should memory be external, latent, structured, or end-to-end learned — and how should it interact
@@ -444,7 +474,7 @@
           </p>
         </div>
         <div class="bg-cream p-7 hover:bg-ember-soft/60 transition-colors">
-          <span class="font-mono text-ember text-sm">05</span>
+          <span class="font-mono text-sky text-sm">05</span>
           <h3 class="font-serif font-semibold text-lg mt-3 mb-2 leading-snug">Learning from remembered experience</h3>
           <p class="text-sm text-ink/70 leading-relaxed">
             How can memories of failed grasps, unsuccessful searches, misunderstood instructions, or changing
@@ -452,7 +482,7 @@
           </p>
         </div>
         <div class="bg-cream p-7 hover:bg-ember-soft/60 transition-colors">
-          <span class="font-mono text-ember text-sm">06</span>
+          <span class="font-mono text-sky text-sm">06</span>
           <h3 class="font-serif font-semibold text-lg mt-3 mb-2 leading-snug">Evaluating memory-enabled learning</h3>
           <p class="text-sm text-ink/70 leading-relaxed">
             What benchmarks and metrics can distinguish genuine memory use from larger context windows,
@@ -470,7 +500,7 @@
         <div class="absolute inset-0 lattice opacity-50 pointer-events-none"></div>
         <div class="relative">
           <div class="flex flex-wrap items-center justify-between gap-3 mb-7">
-            <p class="text-ember-light font-bold tracking-[0.24em] text-[11px] uppercase">Key Dates</p>
+            <p class="text-sky-light font-bold tracking-[0.24em] text-[11px] uppercase">Key Dates</p>
             <a href="cfp.html" class="text-[11px] font-semibold uppercase tracking-wider text-cream/70 hover:text-cream transition-colors">
               Call for Papers <span aria-hidden="true">→</span>
             </a>
@@ -575,6 +605,7 @@
           <a href="#about" class="hover:text-cream transition-colors">About</a>
           <a href="#speakers" class="hover:text-cream transition-colors">Speakers</a>
           <a href="#schedule" class="hover:text-cream transition-colors">Schedule</a>
+          <a href="papers.html" class="hover:text-cream transition-colors">Papers</a>
           <a href="#challenges" class="hover:text-cream transition-colors">Open Problems</a>
           <a href="cfp.html" class="hover:text-cream transition-colors">Call for Papers</a>
         </nav>

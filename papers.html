@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Accepted Papers — Memory for Robot Foundation Models · CoRL 2026</title>
+  <meta name="description" content="A CoRL 2026 half-day workshop on memory for robot foundation models and vision–language–action (VLA) models: what robots should remember, and how memory should be learned, built, evaluated, and deployed." />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['Fraunces', 'Georgia', 'serif'],
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            ink:    { DEFAULT: '#0f1729', soft: '#1b2540' },
+            cream:  { DEFAULT: '#f6f8fb', deep: '#e7eef6' },
+            ember:  { DEFAULT: '#c6700f', light: '#e0902a', soft: '#f3e2c8' },
+            sky:    { DEFAULT: '#1f78b8', light: '#4cc3f2', soft: '#dcecf8' },
+          },
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body { -webkit-font-smoothing: antialiased; }
+
+    /* Memory-lattice dot field used behind the dark hero */
+    .lattice {
+      background-image:
+        radial-gradient(rgba(76,195,242,0.45) 1.4px, transparent 1.6px),
+        radial-gradient(rgba(255,255,255,0.07) 1.4px, transparent 1.6px);
+      background-size: 46px 46px, 23px 23px;
+      background-position: 0 0, 11px 11px;
+      mask-image: radial-gradient(ellipse 90% 75% at 50% 35%, #000 30%, transparent 80%);
+      -webkit-mask-image: radial-gradient(ellipse 90% 75% at 50% 35%, #000 30%, transparent 80%);
+    }
+
+    /* Section-entry reveal */
+    .reveal { opacity: 0; transform: translateY(22px); transition: opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1); }
+    .reveal.in { opacity: 1; transform: none; }
+
+    .link-underline { background-image: linear-gradient(currentColor,currentColor); background-size: 0% 1.5px; background-repeat: no-repeat; background-position: 0 100%; transition: background-size .3s ease; }
+    .link-underline:hover { background-size: 100% 1.5px; }
+
+    /* High-visibility CTA: warm gradient + sweeping shine, crisp edge (no outer glow) */
+    .cta {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(100deg, #e0902a 0%, #f5b153 45%, #c6700f 100%);
+      color: #0f1729;
+      transition: transform .2s ease, filter .2s ease;
+    }
+    .cta::after {
+      content: "";
+      position: absolute; inset: 0;
+      pointer-events: none;
+      background: linear-gradient(105deg, transparent 34%, rgba(255,255,255,0.6) 50%, transparent 66%);
+      transform: translateX(-130%);
+      animation: ctaShine 3.8s ease-in-out infinite;
+    }
+    .cta:hover { transform: translateY(-2px); filter: brightness(1.06); }
+    .cta > * { position: relative; z-index: 1; }
+
+    @keyframes ctaShine { 0%, 58% { transform: translateX(-130%); } 88%, 100% { transform: translateX(130%); } }
+
+    /* Key-dates banner */
+    .date-banner {
+      background: linear-gradient(135deg, #16244a 0%, #0f1729 55%, #2a1d10 100%);
+      box-shadow: 0 26px 60px -32px rgba(15,23,41,0.7), inset 0 1px 0 rgba(255,255,255,0.06);
+    }
+    .pulse-dot { animation: dotPulse 1.9s ease-in-out infinite; }
+    @keyframes dotPulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(224,144,42,0.7); opacity: 1; }
+      70%      { box-shadow: 0 0 0 7px rgba(224,144,42,0); opacity: .75; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .cta, .cta::after, .pulse-dot { animation: none; }
+      .reveal { opacity: 1; transform: none; transition: none; }
+    }
+
+    ::selection { background: #e0902a; color: #0f1729; }
+  </style>
+</head>
+
+<body class="font-sans text-ink bg-cream antialiased">
+
+  <!-- ===================== NAV ===================== -->
+  <nav id="nav" class="fixed top-0 inset-x-0 z-50 transition-colors duration-300">
+    <div class="max-w-6xl mx-auto px-5 sm:px-6 h-16 flex items-center justify-between">
+      <a href="index.html" id="brand" class="font-serif font-semibold tracking-tight text-[15px] text-white transition-colors">
+        Memory&nbsp;·&nbsp;<span class="opacity-70">CoRL 2026</span>
+      </a>
+      <div id="navlinks" class="hidden lg:flex items-center gap-6 whitespace-nowrap text-[13px] font-medium text-white/80">
+        <a href="index.html#about" class="hover:text-white transition-colors">About</a>
+        <a href="index.html#speakers" class="hover:text-white transition-colors">Speakers</a>
+        <a href="index.html#schedule" class="hover:text-white transition-colors">Schedule</a>
+        <a href="papers.html" class="hover:text-white transition-colors">Accepted Papers</a>
+        <a href="index.html#challenges" class="hover:text-white transition-colors">Open Problems</a>
+        <a href="cfp.html" class="hover:text-white transition-colors">Call for Papers</a>
+        <a href="index.html#organizers" class="hover:text-white transition-colors">Organizers</a>
+      </div>
+      <a href="index.html#schedule" id="navcta" class="cta text-[13px] font-bold uppercase tracking-wider px-5 py-2.5 rounded-full">
+        <span class="flex items-center gap-1.5">Program <span aria-hidden="true">→</span></span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- ===================== HEADER ===================== -->
+  <header id="top" class="relative overflow-hidden bg-ink text-cream">
+    <div class="absolute inset-0 lattice pointer-events-none"></div>
+    <div class="relative max-w-5xl mx-auto px-5 sm:px-6 pt-32 pb-16 sm:pt-36 sm:pb-20">
+      <p class="text-sky-light font-semibold tracking-[0.28em] text-[11px] sm:text-xs uppercase mb-5">
+        CoRL 2026 · Memory for Robot Foundation Models
+      </p>
+      <h1 class="font-serif font-semibold leading-[1.06] tracking-tight text-[2.4rem] sm:text-5xl mb-5">Accepted Papers</h1>
+      <p class="inline-flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-cream/65">
+        <span class="w-2 h-2 rounded-full bg-ember-light"></span>
+        <span id="paper-count"></span>
+        Spotlight talks 9:40 – 10:10 AM · Poster session 10:10 – 10:40 AM · Hilton Austin, Room 408
+      </p>
+    </div>
+  </header>
+
+  <!-- ===================== PAPERS ===================== -->
+  <section id="papers" class="bg-cream py-16 px-5 sm:px-6">
+    <div class="max-w-3xl mx-auto">
+      <p class="text-[1.0625rem] leading-relaxed text-ink/75 mb-10">
+        The workshop is non-archival. Camera-ready versions of all accepted papers are listed below.
+      </p>
+      <ol id="paper-list" class="divide-y divide-ink/10 border-y border-ink/10"></ol>
+      <noscript><p class="text-ink/70">Please enable JavaScript to see the list of accepted papers.</p></noscript>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="bg-ink text-cream/60 py-14 px-5 sm:px-6">
+    <div class="max-w-5xl mx-auto">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-8 border-b border-white/10 pb-10">
+        <div>
+          <p class="font-serif font-semibold text-cream text-xl tracking-tight">Memory for Robot Foundation Models</p>
+          <p class="text-sm mt-2">CoRL 2026 Workshop · Hilton Austin, Room 408 · 500 E 4th St, Austin, TX 78701 · November 12, 2026</p>
+        </div>
+        <nav class="flex flex-wrap gap-x-6 gap-y-2 text-sm">
+          <a href="index.html#about" class="hover:text-cream transition-colors">About</a>
+          <a href="index.html#speakers" class="hover:text-cream transition-colors">Speakers</a>
+          <a href="index.html#schedule" class="hover:text-cream transition-colors">Schedule</a>
+          <a href="papers.html" class="hover:text-cream transition-colors">Papers</a>
+          <a href="index.html#challenges" class="hover:text-cream transition-colors">Open Problems</a>
+          <a href="cfp.html" class="hover:text-cream transition-colors">Call for Papers</a>
+        </nav>
+      </div>
+      <div class="pt-8 text-sm">
+        <p>© 2026 Memory for Robot Foundation Models · Workshop Organizers</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Accepted papers: data generated by acceptance/build_papers_page.py -->
+  <script src="assets/papers.js"></script>
+  <script>
+    (function () {
+      const papers = window.ACCEPTED_PAPERS || [];
+      const list = document.getElementById('paper-list');
+      document.getElementById('paper-count').textContent = papers.length + ' papers ·';
+
+      function el(tag, className, text) {
+        const node = document.createElement(tag);
+        if (className) node.className = className;
+        if (text) node.textContent = text;
+        return node;
+      }
+
+      papers.forEach(p => {
+        const item = el('li', 'py-7');
+
+        if (p.spotlight || p.poster) {
+          const tags = el('div', 'flex flex-wrap gap-2 mb-2.5');
+          if (p.spotlight) tags.append(el('span', 'text-[10px] font-bold uppercase tracking-[0.14em] bg-ember-light text-ink px-2.5 py-1 rounded-full', 'Spotlight talk'));
+          if (p.poster) tags.append(el('span', 'text-[10px] font-bold uppercase tracking-[0.14em] text-sky ring-1 ring-sky/50 px-2.5 py-1 rounded-full', 'Poster'));
+          item.append(tags);
+        }
+
+        const title = el('h3', 'font-serif font-semibold text-xl leading-snug tracking-tight');
+        if (p.pdf) {
+          const link = el('a', 'link-underline hover:text-ember transition-colors', p.title);
+          link.href = p.pdf; link.target = '_blank'; link.rel = 'noopener';
+          title.append(link);
+        } else {
+          title.textContent = p.title;
+        }
+        item.append(title);
+
+        if (p.authors.length) item.append(el('p', 'text-sm text-ink/65 mt-1.5 leading-relaxed', p.authors.join(', ')));
+
+        const actions = el('div', 'flex flex-wrap items-start gap-3 mt-3.5');
+        if (p.pdf) {
+          const pdf = el('a', 'inline-flex items-center gap-1.5 rounded-full border border-ink/20 px-3.5 py-1 text-xs font-semibold hover:bg-ink hover:text-cream transition-colors', 'PDF ↗');
+          pdf.href = p.pdf; pdf.target = '_blank'; pdf.rel = 'noopener';
+          actions.append(pdf);
+        } else {
+          actions.append(el('span', 'inline-flex rounded-full border border-dashed border-ink/20 px-3.5 py-1 text-xs text-ink/50', 'PDF coming soon'));
+        }
+        if (p.abstract) {
+          const details = el('details', 'group basis-full sm:basis-auto sm:flex-1');
+          details.append(el('summary', 'cursor-pointer list-none inline-flex rounded-full border border-ink/20 px-3.5 py-1 text-xs font-semibold hover:bg-ink/5 transition-colors', 'Abstract'));
+          details.append(el('p', 'mt-3 text-sm leading-relaxed text-ink/70', p.abstract));
+          actions.append(details);
+        }
+        item.append(actions);
+        list.append(item);
+      });
+    })();
+  </script>
+
+  <!-- ===================== SCRIPTS ===================== -->
+  <script>
+    // Nav: transparent over hero, solid (cream) after scroll
+    const nav = document.getElementById('nav');
+    const brand = document.getElementById('brand');
+    const navlinks = document.getElementById('navlinks');
+
+    function onScroll() {
+      const solid = window.scrollY > 60;
+      nav.classList.toggle('bg-cream/95', solid);
+      nav.classList.toggle('backdrop-blur', solid);
+      nav.classList.toggle('shadow-sm', solid);
+      nav.classList.toggle('border-b', solid);
+      nav.classList.toggle('border-ink/10', solid);
+
+      brand.classList.toggle('text-white', !solid);
+      brand.classList.toggle('text-ink', solid);
+
+      navlinks.classList.toggle('text-white/80', !solid);
+      navlinks.classList.toggle('text-ink/70', solid);
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    // Reveal on scroll
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  </script>
+
+</body>
+</html>

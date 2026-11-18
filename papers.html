@@ -140,6 +140,13 @@
       <p class="text-[1.0625rem] leading-relaxed text-ink/75 mb-10">
         The workshop is non-archival. Camera-ready versions of all accepted papers are listed below.
       </p>
+      <!-- ---------- AWARDS ---------- -->
+      <div id="awards" class="hidden mb-14">
+        <h2 class="font-serif font-semibold text-2xl sm:text-3xl tracking-tight mb-6">Awards</h2>
+        <div id="award-list" class="grid gap-5"></div>
+      </div>
+
+      <h2 class="font-serif font-semibold text-2xl sm:text-3xl tracking-tight mb-2">All Accepted Papers</h2>
       <ol id="paper-list" class="divide-y divide-ink/10 border-y border-ink/10"></ol>
       <noscript><p class="text-ink/70">Please enable JavaScript to see the list of accepted papers.</p></noscript>
     </div>
@@ -173,6 +180,8 @@
   <script>
     (function () {
       const papers = window.ACCEPTED_PAPERS || [];
+      // Workshop awards, keyed by OpenReview paper number.
+      const AWARDS = { 33: 'Best Paper Award', 35: 'Best Student Paper Award' };
       const list = document.getElementById('paper-list');
       document.getElementById('paper-count').textContent = papers.length + ' papers ·';
 
@@ -186,8 +195,10 @@
       papers.forEach(p => {
         const item = el('li', 'py-7');
 
-        if (p.spotlight || p.poster) {
+        const award = AWARDS[p.number];
+        if (award || p.spotlight || p.poster) {
           const tags = el('div', 'flex flex-wrap gap-2 mb-2.5');
+          if (award) tags.append(el('span', 'text-[10px] font-bold uppercase tracking-[0.14em] bg-ink text-ember-light px-2.5 py-1 rounded-full', '🏆 ' + award));
           if (p.spotlight) tags.append(el('span', 'text-[10px] font-bold uppercase tracking-[0.14em] bg-ember-light text-ink px-2.5 py-1 rounded-full', 'Spotlight talk'));
           if (p.poster) tags.append(el('span', 'text-[10px] font-bold uppercase tracking-[0.14em] text-sky ring-1 ring-sky/50 px-2.5 py-1 rounded-full', 'Poster'));
           item.append(tags);
@@ -222,6 +233,27 @@
         item.append(actions);
         list.append(item);
       });
+
+      // Award cards above the full list, in the order given in AWARDS.
+      const awardList = document.getElementById('award-list');
+      Object.entries(AWARDS).forEach(([number, award]) => {
+        const p = papers.find(q => q.number === Number(number));
+        if (!p) return;
+        const card = el('article', 'relative overflow-hidden rounded-2xl bg-ink text-cream p-6 sm:p-7 ring-1 ring-ember-light/40');
+        card.append(el('p', 'text-ember-light font-bold tracking-[0.2em] text-[11px] uppercase mb-3', '🏆 ' + award));
+        const title = el('h3', 'font-serif font-semibold text-xl sm:text-2xl leading-snug tracking-tight');
+        if (p.pdf) {
+          const link = el('a', 'link-underline hover:text-ember-light transition-colors', p.title);
+          link.href = p.pdf; link.target = '_blank'; link.rel = 'noopener';
+          title.append(link);
+        } else {
+          title.textContent = p.title;
+        }
+        card.append(title);
+        if (p.authors.length) card.append(el('p', 'text-sm text-cream/70 mt-2 leading-relaxed', p.authors.join(', ')));
+        awardList.append(card);
+      });
+      if (awardList.children.length) document.getElementById('awards').classList.remove('hidden');
     })();
   </script>
 
